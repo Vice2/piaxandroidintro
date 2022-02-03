@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411891008465",
+    "firebase_url": "https://piax-c448f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "piax-c448f",
+    "storage_bucket": "piax-c448f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411891008465:android:8f4f05fc2ba83fd26716f0",
+        "android_client_info": {
+          "package_name": "se.bashar.piaxshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411891008465-6o07e8qm2q0tb9iipe3t35cb4do9jen9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFfd82rdfnsbSxg-e0C_zt8oiTLndixAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411891008465-6o07e8qm2q0tb9iipe3t35cb4do9jen9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411891008465-0ptq0d9lua480esmq1nq6jua3hua2d9i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "se.Bashar.fbswift"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

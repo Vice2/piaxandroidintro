@@ -21,17 +21,21 @@
         app:srcCompat="@drawable/ic_default_monochrome__kopia_" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="62dp"
         android:layout_marginTop="248dp"
-        android:background="#277FA8"
+        android:background="#FFEE00"
+        android:backgroundTint="#FFEE00"
+        android:shadowColor="#FFEE00"
         android:text="börja spela"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:rippleColor="#277FA8" />
+        app:rippleColor="#FFEE00"
+        app:strokeColor="#FFEE00" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var isLoggedIn = true
+
+        if (isLoggedIn)
+        {
+            //GO START
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, StartFragment()).commit()
+        } else {
+            //GO LOGIN
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, LoginFragment()).commit()
+        }
     }
 }
 

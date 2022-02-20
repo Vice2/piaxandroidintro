@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "139916641645",
+    "firebase_url": "https://piax-a66b4-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "piax-a66b4",
+    "storage_bucket": "piax-a66b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139916641645:android:baba6d505fd91145c18664",
+        "android_client_info": {
+          "package_name": "se.bashar.piaxrecept"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139916641645-t0ld2vftk0id6s193ksrgiqa84kl6q10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEWZoEqAcQziUSDAx7iZD6TG-g4UXGq0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139916641645-t0ld2vftk0id6s193ksrgiqa84kl6q10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

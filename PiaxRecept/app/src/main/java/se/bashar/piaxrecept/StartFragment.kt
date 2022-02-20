@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import se.bashar.piaxrecept.databinding.FragmentStartBinding
 import java.util.zip.Inflater
@@ -13,6 +14,8 @@ class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding get() = _binding!!
+
+    val model: RecipteVewModel by activityViewModels()
 
     val startadapter = StartAdapter()
 
@@ -35,9 +38,14 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        model.loadRecipes()
+
         binding.recipeRV.layoutManager = LinearLayoutManager(requireContext())
         binding.recipeRV.adapter = startadapter
 
+        binding.logoutButton.setOnClickListener {
+            model.logout()
+        }
         binding.addRecipeButton.setOnClickListener{
             requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, RecipeDetailFragment()).addToBackStack(null).commit()
         }

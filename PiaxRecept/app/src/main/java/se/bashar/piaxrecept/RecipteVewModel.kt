@@ -61,7 +61,7 @@ class RecipteVewModel : ViewModel() {
         //
     }
 
-    fun saveRecipe()
+    fun saveRecipe(reci : Recipe)
     {
         //SPARA TILL FB
     }

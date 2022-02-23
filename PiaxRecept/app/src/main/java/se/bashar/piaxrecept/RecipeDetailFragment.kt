@@ -1,11 +1,13 @@
 package se.bashar.piaxrecept
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import se.bashar.piaxrecept.databinding.FragmentRecipeDetailBinding
 import se.bashar.piaxrecept.databinding.FragmentStartBinding
 
@@ -15,6 +17,8 @@ class RecipeDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     val model: RecipteVewModel by activityViewModels()
+
+    var currentrecipe = Recipe()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,15 +33,26 @@ class RecipeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.recipeTitelEdittext.setText(currentrecipe.title)
+
         binding.recipeSaveButton.setOnClickListener {
 
             //TODO: Validera så inmatning är korrekt
 
-            var saverecipe = Recipe()
-            saverecipe.title = binding.recipeTitelEdittext.text.toString()
 
-            model.saveRecipe(saverecipe)
+            currentrecipe.title = binding.recipeTitelEdittext.text.toString()
+
+            model.saveRecipe(currentrecipe)
         }
+
+        val savestatusobserver = Observer<Boolean> {
+            Log.i ("PIAXDEBUG", "Save status något hände")
+            if (it == true)
+            {
+                requireActivity().supportFragmentManager.popBackStack()
+            }
+        }
+        model.saveRecipeStatus.observe(requireActivity(), savestatusobserver)
     }
 
     override fun onDestroy() {

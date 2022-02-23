@@ -1,11 +1,14 @@
 package se.bashar.piaxrecept
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import se.bashar.piaxrecept.databinding.FragmentLoginBinding
 import se.bashar.piaxrecept.databinding.FragmentStartBinding
 
@@ -40,6 +43,21 @@ class LoginFragment : Fragment() {
             val password = binding.loginPasswordEdittext.text.toString()
             model.signup(email, password)
         }
+
+        val loginobserver = Observer<LoginResult> {
+            Log.i ("PIAXDEBUG", "Login STATUS")
+            if(it == LoginResult.LOGINFAIL)
+            {
+                Log.i("PIAXDEBUG", "LOGIN FAIL")
+                Snackbar.make(view, "Felatig inloggning", Snackbar.LENGTH_LONG).show()
+            }
+            if(it == LoginResult.REGISTERFAIL)
+            {
+                Log.i("PIAXDEBUG", "REGISTER FAIL")
+                Snackbar.make(view, "Felatig registrering", Snackbar.LENGTH_LONG).show()
+            }
+        }
+        model.loginStatus.observe(requireActivity(), loginobserver)
     }
     override fun onDestroy() {
         super.onDestroy()
